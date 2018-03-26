@@ -41,8 +41,14 @@ public class AuthFilter implements Filter {
                 String hacker = req.getParameter("hacker_ф");
                 if (hacker != null) {
                     req.getSession().setAttribute("myAuth", hacker.equals("no") ? "i_am_not_a_hacker" : "i_am_a_hacker");
-                    response.sendRedirect(((HttpServletRequest) servletRequest).getContextPath() + "/index.jsp");
+                    if (req.getSession().getAttribute("authRedirect") != null) {
+                        response.sendRedirect((String) req.getSession().getAttribute("authRedirect"));
+                        req.getSession().removeAttribute("authRedirect");
+                    } else {
+                        response.sendRedirect(((HttpServletRequest) servletRequest).getContextPath() + "/index.jsp");
+                    }
                 } else {
+                    req.getSession().setAttribute("authRedirect", ((HttpServletRequest) servletRequest).getRequestURI());
                     response.sendRedirect(((HttpServletRequest) servletRequest).getContextPath() + "/login.jsp");
                 }
             }
