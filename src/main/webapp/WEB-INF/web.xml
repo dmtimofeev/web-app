@@ -24,6 +24,15 @@
         <url-pattern>/bl/*</url-pattern>
     </filter-mapping>
 
+    <servlet>
+        <servlet-name>dataTable</servlet-name>
+        <servlet-class>ru.servlets.DataTableServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dataTable</servlet-name>
+        <url-pattern>/bl/dataTable</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
