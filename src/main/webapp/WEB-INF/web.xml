@@ -33,6 +33,14 @@
         <url-pattern>/bl/dataTable</url-pattern>
     </servlet-mapping>
 
+    <listener>
+        <listener-class>ru.listeners.SessionListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>ru.listeners.RqListener</listener-class>
+    </listener>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
