@@ -8,6 +8,7 @@
 
     <properties>
         <tomee.deploy.path>D:\software\apache-tomee-webprofile-7.0.2\webapps</tomee.deploy.path>
+        <h2.version>1.4.197</h2.version>
     </properties>
 
     <dependencies>
@@ -22,6 +23,13 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
+        </dependency>
+
+        <!--H2-->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
         </dependency>
 
     </dependencies>

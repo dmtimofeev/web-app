@@ -4,11 +4,13 @@ package ru.beans;
  * Created by DmSeTimofeev on 22.03.2018.
  */
 public class TableItem {
+    private int id;
     private String name;
     private int count;
     private double price;
 
-    public TableItem(String name, int count, double price) {
+    public TableItem(int id, String name, int count, double price) {
+        this.id = id;
         this.name = name;
         this.count = count;
         this.price = price;
