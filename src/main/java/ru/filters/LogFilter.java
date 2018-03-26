@@ -2,7 +2,7 @@ package ru.filters;
 
 import ru.ejb.CounterBean;
 
-import javax.inject.Inject;
+import javax.ejb.EJB;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +23,7 @@ import java.util.Date;
 @WebFilter(urlPatterns = "/*")
 public class LogFilter implements Filter {
 
-    @Inject
+    @EJB
     private CounterBean counterBean;
 
     @Override

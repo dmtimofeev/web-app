@@ -8,7 +8,7 @@
  
  set JPDA_ADDRESS=8000
   
-   set JPDA_TRANSPORT=dt_socket
+ set JPDA_TRANSPORT=dt_socket
 
  изменить
  call "%EXECUTABLE%" start %CMD_LINE_ARGS%
@@ -16,6 +16,10 @@
  на
  call "%EXECUTABLE%" jpda start %CMD_LINE_ARGS%
 
+  <role rolename="admin-gui"/>
+  <role rolename="tomee-admin"/>
+  <role rolename="manager-gui"/>
+  <user password="tomee" roles="tomee-admin,manager-gui,admin-gui" username="tomee"/>
 
 
  Что почитать
