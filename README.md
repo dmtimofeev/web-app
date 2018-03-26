@@ -12,3 +12,8 @@
  call "%EXECUTABLE%" start %CMD_LINE_ARGS%
  на
  call "%EXECUTABLE%" jpda start %CMD_LINE_ARGS%
+
+
+ Что почитать
+    https://javaee.github.io/tutorial/toc.html
+    https://github.com/javaee/tutorial-examples
