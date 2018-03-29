@@ -14,6 +14,7 @@ public class DataDaoImpl implements DataDao {
     /**
      * Параметры соединения с БД
      */
+    static final String JDBC_DRIVER = "org.h2.Driver";
     private static final String DB_URL = "jdbc:h2:mem:demodb";
     private static final String DB_USER = "sa";
     private static final String DB_PASS = "";
@@ -39,6 +40,7 @@ public class DataDaoImpl implements DataDao {
     @PostConstruct
     private void init() {
         try {
+            Class.forName(JDBC_DRIVER);
             Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
             Statement statement;
             PreparedStatement preparedStatement;
@@ -79,6 +81,8 @@ public class DataDaoImpl implements DataDao {
             preparedStatement.close();
 
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
